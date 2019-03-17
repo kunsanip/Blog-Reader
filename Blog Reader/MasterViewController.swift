@@ -53,7 +53,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                                     
                                     for result in results{
                                         context.delete(result)
+                                        
                                         do{
+                                        
                                             try context.save()
                                             
                                         }catch{
@@ -205,7 +207,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         fetchRequest.fetchBatchSize = 20
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "published", ascending: false)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
